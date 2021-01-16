@@ -1,22 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <nav
-      value={value}
-      onChange={handleChange}
     >
-      <button label="strains" component={Link} to="/strains">All Strains</button>
-      <button label="My Experiences" component={Link} to="/experiences">My Experiences</button>
+      <NavLink 
+        aria-current='page' 
+        to='/strains'
+      >Strains
+      </NavLink>
+      <NavLink 
+        aria-current='page' 
+        to='/experiences'
+      >Experiences
+      </NavLink>
     </nav>
   );
 }
-
-// export default NavBar;
