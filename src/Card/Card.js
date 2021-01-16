@@ -6,7 +6,7 @@ export const Card = (props) => {
   // const positiveEffects = Object.keys(props.strain.effects)
 
   return (
-    <article className='card'>
+    <section className='card'>
       <h3>Strain: { props.strainName }</h3>
       <div>
         <h5>Type:</h5>
@@ -22,6 +22,6 @@ export const Card = (props) => {
         {props.strain.effects.medical.map(flavor => (<ul>{flavor}</ul>) )}
         <img src={leaf}/>
       </div>
-    </article>
+    </section>
   )
 }
