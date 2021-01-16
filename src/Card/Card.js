@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Card.css';
-import leaf from '../leaf.svg'
+import leaf from '../leaf.svg';
+import medicalLeaf from '../medicalLeaf.svg';
 
 export const Card = (props) => {
-  // const positiveEffects = Object.keys(props.strain.effects)
+  const [favoritedStrain, setFavorite] = useState(false);
+
+  const addFavorite = () => {
+    setFavorite(!favoritedStrain);
+  }
 
   return (
     <section className='card'>
@@ -20,7 +25,8 @@ export const Card = (props) => {
         {props.strain.effects.negative.map(flavor => (<ul>{flavor}</ul>) )}
         <h6>Medical:</h6>
         {props.strain.effects.medical.map(flavor => (<ul>{flavor}</ul>) )}
-        <img src={leaf}/>
+        {favoritedStrain === false && <img aria-label='Favorite Strain' src={leaf} onClick={addFavorite}/>}
+        {favoritedStrain === true && <img aria-label='Strain was added to favorites' src={medicalLeaf}/>}
       </div>
     </section>
   )
