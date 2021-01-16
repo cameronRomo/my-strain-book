@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { NavBar } from '../NavBar/NavBar';
 import { Strains } from '../Strains/Strains';
-import Experiences from '../Experiences/Experiences';
+// import Experiences from '../Experiences/Experiences';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export const App = () => {

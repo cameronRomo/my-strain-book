@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { strainsData } from '../strain-data';
+import { Card } from '../Card/Card';
 
 export const Strains = () => {
   const [strain, setStrain] = useState('');
-  const [open, setOpen] = useState(false);
+  const [strainName, setStrainName] = useState('');
 
-  const handleChange = (event) => {
+  const selectedStrain = (event) => {
     const selectedStrain = event.target.value;
-    // selectStrain(selectedStrain);
-    setStrain(selectedStrain);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
+    const matchedStrain = strainsData[selectedStrain]
+    setStrain(matchedStrain);
+    setStrainName(selectedStrain);
   };
   
+  const strainsArray = Object.keys(strainsData);
+
   return (
     <section>
-      <label>Choose a Strain
-        <select>
-
-        </select>
-      </label>
+      <label>Choose a Strain</label>
+      <select onChange={ selectedStrain }>
+        <option value=''>Choose a Medicine</option>
+        {strainsArray.map(strain => {
+          return <option value={ strain }>{ strain }</option>})
+        }
+      </select>
+      {strain && <Card strainName={strainName} strain={strain}/>}
     </section>
   )
 }
