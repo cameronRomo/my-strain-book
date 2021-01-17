@@ -1,0 +1,27 @@
+.card {
+  background-color: forestgreen;
+  border-radius: 15px;
+}
+
+.strain-info-container {
+    display: flex;
+    font-size: 12px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.strain-type {
+
+}
+
+.strain-flavors {
+
+}
+
+.strain-effects-positive-negative {
+
+}
+
+.strain-effects-medical {
+
+}
