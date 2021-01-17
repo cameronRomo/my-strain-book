@@ -44,7 +44,7 @@ export const Strains = () => {
               onChange={ selectedStrain }>
                 <option value=''>Strains</option>
                 {strainsArray.map(strain => {
-                  return <option value={ strain }>{ strain }</option>})
+                  return <option key={strain.id} value={ strain }>{ strain }</option>})
                 }
             </select>
             <span class="focus"></span>
