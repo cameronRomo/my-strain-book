@@ -1,0 +1,19 @@
+.nav-bar {
+  background-color: forestgreen;
+  height: 2em;
+  border-radius: 0px 0px 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.3em 1.5em 0.3em 1.5em;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: forestgreen;
+    color: forestgreen;
+}

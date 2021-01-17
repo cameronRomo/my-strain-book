@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchedStrainsData } from '../apiCalls';
 import { strainsData } from '../strain-data';
 import { Card } from '../Card/Card';
+import './Strains.css'
 const myKey = process.env.REACT_APP_API_KEY;
 
 export const Strains = () => {
@@ -35,13 +36,20 @@ export const Strains = () => {
       )
     } else {
       return (
-      <select 
-        onChange={ selectedStrain }>
-          <option value=''>Choose a Medicine</option>
-          {strainsArray.map(strain => {
-            return <option value={ strain }>{ strain }</option>})
-          }
-      </select>
+        <div className='dropdown-container'>
+          <h1>Begin by choosing a strain</h1>
+          <div className='select'>
+            <select 
+              className='dropdown-menu'
+              onChange={ selectedStrain }>
+                <option value=''>Strains</option>
+                {strainsArray.map(strain => {
+                  return <option value={ strain }>{ strain }</option>})
+                }
+            </select>
+            <span class="focus"></span>
+          </div>
+        </div>
       )
     }
   }
