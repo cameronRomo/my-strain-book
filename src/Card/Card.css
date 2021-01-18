@@ -1,27 +1,94 @@
 .card {
-  background-color: forestgreen;
-  border-radius: 15px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 20%;
 }
 
-.strain-info-container {
-    display: flex;
-    font-size: 12px;
-    flex-direction: row;
-    justify-content: space-around;
+.selected-strain {
+  grid-area: a;
+  color: lavender;
 }
 
-.strain-type {
+.selected-type {
+  grid-area: b;
+  color: lavender;
+}
 
+.strain-header {
+  background-color: beige;
 }
 
 .strain-flavors {
-
+  grid-area: d;
+  background-color: cornflowerblue;
+  border-radius: 1em;
+  padding: 1em;
+  width: 13em;
 }
 
-.strain-effects-positive-negative {
-
+.header-effects {
+  grid-area: c;
+  box-shadow: 12px -6px 17px rebeccapurple;
+  background-color: lavender;
+  border-radius: 1em;
+  align-self: center;
+  padding: 2%;
+  width: 5em;
+  color: rebeccapurple;
 }
 
-.strain-effects-medical {
+.container-effects {
+  display: grid;
+  grid-template-columns: 74px 72px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "strain-header-1 strain-header-2 strain-header-3"
+      "strain-main-1 strain-main-2 strain-main-3";
+  background-color: lavender;
+  width: 16em;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 28px -8px 21px rebeccapurple;
+  color: rebeccapurple;
+}
 
+.positive-effects {
+  grid-area: strain-main-1;
+}
+
+.negative-effects {
+  grid-area: strain-main-2;
+}
+
+.medical-effects {
+  grid-area: strain-main-3;
+}
+
+.strain-container {
+  width: 150%;
+  background-color: darksalmon;
+  display: grid;
+  grid-template-columns: 45% 69px 190px;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "a b c"
+      "d e f"
+      "g h i";
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.leaf{
+  grid-area: h;
+  box-shadow: -6px 6px 30px black;
+  border-radius: 7em;
+  background-color: mediumseagreen;
+}
+
+.favorite-leaf {
+  grid-area: h;
+  border-radius: 7em;
+  margin: 1em;
+  box-shadow: -6px 6px 30px black;
 }

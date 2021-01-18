@@ -1,0 +1,89 @@
+.experiences {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.strain {
+  grid-area: header;
+  color: lavender;
+}
+
+.type {
+  grid-area: header-middle;
+  color: lavender;
+}
+
+.strain-header {
+  background-color: beige;
+}
+
+.strain-palate {
+  grid-area: main;
+  background-color: cornflowerblue;
+  border-radius: 1em;
+  padding: 1em;
+  width: 7em;
+}
+
+.effects-header {
+  grid-area: header-right;
+  box-shadow: -7px 13px 22px rebeccapurple;
+  background-color: lavender;
+  border-radius: 1em;
+  align-self: center;
+  padding: 2%;
+  width: 5em;
+  color: rebeccapurple
+}
+
+.effects-container {
+  /* area-grid: main-right; */
+  display: grid;
+  grid-template-columns: 74px 72px 50px;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "header-1 header-2 header-3"
+      "main-1 main-2 main-3";
+  background-color: lavender;
+  width: 16em;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: -7px 18px 21px rebeccapurple;
+  color: rebeccapurple;
+}
+
+.effects-positive {
+  grid-area: main-1;
+}
+
+.effects-negative {
+  grid-area: main-2;
+}
+
+.effects-medical {
+  grid-area: main-3;
+}
+
+.experience-container {
+  width: 25em;
+  background-color: darksalmon;
+  display: grid;
+  grid-template-columns: 69px 54px 191px;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "header header-middle header-right"
+      "main main main-right"
+      "footer footer footer";
+  border-radius: 1em;
+  padding: 1em;
+}
+/* .experience-container {
+  background-color: forestgreen;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  margin: 12em;
+  width: 75%;
+} */

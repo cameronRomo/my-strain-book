@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.welcome-message {
+  color: rebeccapurple;
+}
+
 .dropdown-container {
   display: flex;
   flex-direction: column;
@@ -19,6 +23,7 @@
 
 select {
   appearance: none;
+  color: purple;
   background-color: transparent;
   border: none;
   padding: 0 1em 0 0;

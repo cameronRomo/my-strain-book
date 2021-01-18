@@ -1,42 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.css';
 import leaf from '../leaf.svg';
 import medicalLeaf from '../medicalLeaf.svg';
-
 export const Card = (props) => {
-  const [favoritedStrain, setFavorite] = useState(false);
+  // const [favoritedStrain, setFavorite] = useState(false);
+  // const [experiencesLog, setExperiences] = useState([]);
 
-  const addFavorite = () => {
-    setFavorite(!favoritedStrain);
-  }
+  // const addFavorite = (event) => {
+  //   console.log(event.target.id);
+  //   console.log(props.strain.id);
+  //   if (props.strain.id) {
+  //     console.log('yay!');
+  //     setFavorite(!favoritedStrain);
+  //     setExperiences([...experiencesLog, props.strain]);
+  //   } 
+  // }
 
   return (
     <section 
     className='card'
     >
-      <h3>Strain: { props.strainName }</h3>
-      <div className='strain-info-container'>
-        <div className='strain-type'>
-          <h5>Type:</h5>
-          <p>{ props.strain.race }</p>
-        </div>
+      <div className='strain-container'>
+        <h3 className='selected-strain'>Strain: { props.strainName }</h3>
+        <h3 className='selected-type'>{props.strain.race}</h3>
         <div className='strain-flavors'>
-          <h5>Flavors:</h5>
-          {props.strain.flavors.map(flavor => (<ul>{flavor}</ul>) )}
+          <h3>Flavors:</h3>
+          {props.strain.flavors.map(flavor => (<p>{flavor}</p>) )}
         </div>
-        <h5>Effects:</h5>
-          <div className='strain-effects-positive-negative'>
-            <h6>Positve:</h6>
-            {props.strain.effects.positive.map(flavor => (<ul>{flavor}</ul>) )}    
-            <h6>Negative:</h6>
-            {props.strain.effects.negative.map(flavor => (<ul>{flavor}</ul>) )}
+        <h3 className='header-effects'>Effects:</h3>
+        <div className='container-effects'>
+          <div className='positive-effects'>
+            <h3>Positive:</h3>
+            {props.strain.effects.positive.map(flavor => (<p>{flavor}</p>)) }    
           </div>
-        <div className='strain-effects-medical'>
-          <h6>Medical:</h6>
-          {props.strain.effects.medical.map(flavor => (<ul>{flavor}</ul>) )}
+          <div className='negative-effects'>
+            <h3>Negative:</h3>
+            {props.strain.effects.negative.map(flavor => (<p>{flavor}</p>)) }
+          </div>
+          <div>
+            <h3 className='medical-effects'>Medical:</h3>
+            {props.strain.effects.medical.map(flavor => (<ul>{flavor}</ul>) )}
+          </div>
         </div>
-        {favoritedStrain === false && <img aria-label='Favorite Strain' src={leaf} onClick={addFavorite}/>}
-        {favoritedStrain === true && <img aria-label='Strain was added to favorites' src={medicalLeaf}/>}
+        {!props.favoritedStrain && 
+        <img 
+          className='leaf'
+          id={props.id}
+          aria-label='Favorite Strain' 
+          src={leaf} onClick={(event) => props.addFavorite(event)}/>}
+        {props.favoritedStrain && 
+        <img 
+          className='favorite-leaf'
+          aria-label='Strain was added to favorites' 
+          src={medicalLeaf}/>}
       </div>
     </section>
   )
