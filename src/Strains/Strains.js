@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 // import PropTypes from 'prop-types'; // will need in future 
 import { fetchedStrainsData } from '../apiCalls';
-import { strainsData } from '../strain-data';
 import { Card } from '../Card/Card';
 import './Strains.css'
 const myKey = process.env.REACT_APP_API_KEY;
 
-export const Strains = () => {
+export const Strains = (props) => {
   const [strain, setStrain] = useState('');
   const [strainName, setStrainName] = useState('');
   const [allStrains, setAllStrains] = useState({});
+  const [favoritedStrain, setFavorite] = useState(false);
+
   useEffect(() => {
     getAllStrains()
   }, [])
@@ -25,7 +26,19 @@ export const Strains = () => {
     const matchedStrain = allStrains[selectedStrain]
     setStrain(matchedStrain);
     setStrainName(selectedStrain);
+    setFavorite(false);
   };
+
+  const addFavorite = (event) => {
+    if (Number(strain.id) === Number(event.target.id)) {
+      console.log('yay!');
+      strain.name = strainName
+      // experiencesLog.map(experience => experience.name = strainName)  
+      setFavorite(true);
+      props.setExperiences([...props.experiencesLog, strain]);
+      // setExperiencedStrain(strainName)
+    } 
+  }
   
   const strainsArray = Object.keys(allStrains);
 
@@ -37,7 +50,7 @@ export const Strains = () => {
     } else {
       return (
         <div className='dropdown-container'>
-          <h1>Begin by choosing a strain</h1>
+          <h1 className='welcome-message'>Begin by choosing a strain</h1>
           <div className='select'>
             <select 
               className='dropdown-menu'
@@ -47,7 +60,7 @@ export const Strains = () => {
                   return <option key={strain.id} value={ strain }>{ strain }</option>})
                 }
             </select>
-            <span class="focus"></span>
+            <span className="focus"></span>
           </div>
         </div>
       )
@@ -57,7 +70,7 @@ export const Strains = () => {
   return (
     <section>
       {strainsInput()}
-      {strain && <Card strainName={strainName} strain={strain}/>}
+      {strain && <Card id={strain.id} key={strain.id} strainName={strainName} strain={strain} favoritedStrain={favoritedStrain} addFavorite={addFavorite}/>}
     </section>
   )
 }
