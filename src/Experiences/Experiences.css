@@ -1,8 +1,10 @@
 .experiences {
-  padding: 20px;
+  padding: 23px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
+  margin-right: 17em;
+  margin-left: 8em;
 }
 
 .strain {
@@ -39,15 +41,14 @@
 }
 
 .effects-container {
-  /* area-grid: main-right; */
   display: grid;
-  grid-template-columns: 74px 72px 50px;
+  grid-template-columns: 83px 88px 193px;
   grid-template-rows: auto;
   grid-template-areas:
       "header-1 header-2 header-3"
       "main-1 main-2 main-3";
   background-color: lavender;
-  width: 16em;
+  width: 20em;
   padding: 1em;
   border-radius: 1em;
   box-shadow: -7px 18px 21px rebeccapurple;
@@ -67,7 +68,7 @@
 }
 
 .experience-container {
-  width: 25em;
+  width: 29em;
   background-color: darksalmon;
   display: grid;
   grid-template-columns: 69px 54px 191px;
@@ -79,11 +80,3 @@
   border-radius: 1em;
   padding: 1em;
 }
-/* .experience-container {
-  background-color: forestgreen;
-  border-radius: 1em;
-  display: flex;
-  justify-content: space-around;
-  margin: 12em;
-  width: 75%;
-} */
