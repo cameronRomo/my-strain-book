@@ -1,4 +1,4 @@
-# [My Strain Book](https://github.com/cameronRomo/my-strain-book) *solo project*
+# My Strain Book *solo project*
 
 By: [Cameron Romo](https://github.com/cameronRomo)
 
