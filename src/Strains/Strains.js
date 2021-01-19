@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types'; // will need in future 
+import PropTypes from 'prop-types';
 import { fetchedStrainsData } from '../apiCalls';
 import { Card } from '../Card/Card';
 import './Strains.css'
@@ -31,12 +31,9 @@ export const Strains = (props) => {
 
   const addFavorite = (event) => {
     if (Number(strain.id) === Number(event.target.id)) {
-      console.log('yay!');
       strain.name = strainName
-      // experiencesLog.map(experience => experience.name = strainName)  
       setFavorite(true);
       props.setExperiences([...props.experiencesLog, strain]);
-      // setExperiencedStrain(strainName)
     } 
   }
   
@@ -57,7 +54,7 @@ export const Strains = (props) => {
               onChange={ selectedStrain }>
                 <option value=''>Strains</option>
                 {strainsArray.map(strain => {
-                  return <option key={strain.id} value={ strain }>{ strain }</option>})
+                  return <option key={allStrains[strain].id} value={ strain }>{ strain }</option>})
                 }
             </select>
             <span className="focus"></span>
@@ -70,7 +67,12 @@ export const Strains = (props) => {
   return (
     <section>
       {strainsInput()}
-      {strain && <Card id={strain.id} key={strain.id} strainName={strainName} strain={strain} favoritedStrain={favoritedStrain} addFavorite={addFavorite}/>}
+      {strain && <Card id={strain.id} strainName={strainName} strain={strain} favoritedStrain={favoritedStrain} addFavorite={addFavorite}/>}
     </section>
   )
+}
+
+Strains.propTypes = {
+  setExperiences: PropTypes.func,
+  experiencesLog: PropTypes.array,
 }

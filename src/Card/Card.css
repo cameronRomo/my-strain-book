@@ -40,7 +40,7 @@
 
 .container-effects {
   display: grid;
-  grid-template-columns: 74px 72px 50px;
+  grid-template-columns: 130px 72px 50px;
   grid-template-rows: auto;
   grid-template-areas:
       "strain-header-1 strain-header-2 strain-header-3"
