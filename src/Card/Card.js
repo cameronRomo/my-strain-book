@@ -5,7 +5,6 @@ import medicalLeaf from '../medicalLeaf.svg';
 import PropTypes from 'prop-types';
 
 export const Card = (props) => {
-  console.log(props);
   return (
     <section 
       className='card'

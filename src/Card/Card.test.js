@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Card } from './Card';
 import { MemoryRouter } from 'react-router-dom';
@@ -101,7 +101,7 @@ describe('Card', () => {
       </MemoryRouter>
     )
 
-    const favoriteButton = screen.getByRole('img', { name: /Favorite Strain/i })
+    const favoriteButton = screen.getByRole('img', { name: /Favorite Strain/i });
 
     fireEvent.click(favoriteButton);
 

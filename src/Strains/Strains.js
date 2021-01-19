@@ -31,12 +31,9 @@ export const Strains = (props) => {
 
   const addFavorite = (event) => {
     if (Number(strain.id) === Number(event.target.id)) {
-      console.log('yay!');
       strain.name = strainName
-      // experiencesLog.map(experience => experience.name = strainName)  
       setFavorite(true);
       props.setExperiences([...props.experiencesLog, strain]);
-      // setExperiencedStrain(strainName)
     } 
   }
   
