@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { App } from './App';
 import { MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
 
 describe('App', () => {
   beforeEach(() => {
@@ -12,7 +11,7 @@ describe('App', () => {
         <App/>
       </MemoryRouter>
     )
-  })
+  });
 
   it('should render strains tab', () => {
     const strainsTab = screen.getByRole('link', { name: /strains/i });
@@ -25,7 +24,7 @@ describe('App', () => {
   })
 
   it('should render loading message', () => {
-    const loadingBar = screen.getByRole('heading', { name: /loading strains\.\.\./i })
+    const loadingBar = screen.getByRole('heading', { name: /loading strains\.\.\./i });
     expect(loadingBar).toBeInTheDocument();
   })
 })
