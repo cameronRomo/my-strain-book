@@ -42,7 +42,9 @@ export const Strains = (props) => {
   const strainsInput = () => {
     if (!Object.keys(allStrains).length) {
       return (
-        <h2>Loading Strains...</h2>
+        <div className='loading-strains-container'>
+          <h2>Loading Strains...</h2>
+        </div>
       )
     } else {
       return (

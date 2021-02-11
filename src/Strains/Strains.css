@@ -82,3 +82,10 @@ select:focus + .focus {
   border: 2px solid var(--select-focus);
   border-radius: inherit;
 }
+
+.loading-strains-container {
+  margin: 5em;
+  color: rebeccapurple;
+  display: flex;
+  justify-content: center;
+}
