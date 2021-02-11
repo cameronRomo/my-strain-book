@@ -35,6 +35,12 @@ export const Experiences = (props) => {
         })}
       </section>
     )
+  } else {
+    return (
+      <div className='empty-effects'>
+        <h3>Favorite some strains and see them logged here!</h3>
+      </div>
+    )
   }
 }
 

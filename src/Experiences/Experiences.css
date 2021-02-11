@@ -80,3 +80,14 @@
   border-radius: 1em;
   padding: 1em;
 }
+
+.empty-effects {
+  margin: 5em;
+  background-color: lavender;
+  border-style: solid;
+  border-width: .5px;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  color: forestgreen;
+}
